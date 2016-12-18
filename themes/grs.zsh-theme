@@ -8,7 +8,20 @@ function get_pwd() {
   echo "${PWD/$HOME/~}"
 }
 
+<<<<<<< HEAD
 PROMPT=' $fg[yellow]$(get_pwd) $(git_prompt_info) $(virtualenv_info)
+=======
+function battery_charge() {
+    if [ -e ~/bin/batcharge.py ]
+    then
+        echo `python ~/batcharge.py`
+    else
+        echo '';
+    fi
+}
+
+PROMPT=' $fg[yellow]$(get_pwd) $(git_prompt_info) $(virtualenv_info) $(battery_charge)
+>>>>>>> b5a5af22f325e24fa209c57f6338545486020cfd
 %{$reset_color%}→ '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg_bold[red]%}"
